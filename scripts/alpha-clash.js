@@ -9,4 +9,18 @@ function play(){
 
     hideElement('home-screen');
     showElement('play-ground-screen');
+    continueGame();
+}
+
+function continueGame(){
+    //get random alphabet
+  const alphabet = getRandomAlphabets();
+
+  //set regenerated random alphabet
+  const currentAlphabet = document.getElementById('current-alphabet');
+  currentAlphabet.innerText = alphabet;
+
+  //set Background color
+  setBackgroundColor(alphabet);
+
 }
