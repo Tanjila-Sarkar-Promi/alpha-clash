@@ -12,6 +12,29 @@ function play(){
     continueGame();
 }
 
+function keyPressedButtonHandler(event){
+  //player pressed
+  const playerPressed = event.key;
+
+  //get expected alphabet to pressed
+  const currentAlphabetElement = document.getElementById('current-alphabet');
+  const currentAlphabet = currentAlphabetElement.innerText;
+  const expectedAlphabet = currentAlphabet.toLowerCase();
+  console.log(playerPressed, expectedAlphabet);
+
+  if(playerPressed == expectedAlphabet){
+
+    
+    removeBackgroundColor(expectedAlphabet);
+    continueGame();
+  }
+  else{
+    console.log('You missed. You lost a life');
+  }
+  
+}
+document.addEventListener('keyup', keyPressedButtonHandler);
+
 function continueGame(){
     //get random alphabet
   const alphabet = getRandomAlphabets();
@@ -24,3 +47,4 @@ function continueGame(){
   setBackgroundColor(alphabet);
 
 }
+
