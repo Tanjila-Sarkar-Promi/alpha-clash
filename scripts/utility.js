@@ -27,7 +27,7 @@ function setTextElementById(elementId, value){
     element.innerText = value;
 
 }
-function getElementTextById(){
+function getElementTextById(elementId){
     const element = document.getElementById(elementId);
     const text = element.innerText;
     return text;
